@@ -1,0 +1,7 @@
+Galaksija-Flash-Expansion.code-workspace
+/.vscode
+/source/out
+/source/*.lst
+/source/gad-helper.asm
+/disk
+/images_tmp

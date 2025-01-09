@@ -1,0 +1,38 @@
+Name     GSE_AD ;
+PartNo   0 ;
+Date     29/02/2024 ;
+Revision 01 ;
+Designer Vitomir Spasojevic ;
+Company  ;
+Assembly ;
+Location ;
+Device   g16v8 ;
+
+/***************** INPUT PINS **********************/
+PIN  1   = !MREQ   ; /* Z80 /MREQ                  */
+PIN  2   = A14     ; /* Z80 A14                    */
+PIN  3   = A15     ; /* Z80 A15                    */              
+PIN  4   = A1      ; /* Z80 A1                     */  
+PIN  5   = A2      ; /* Z80 A2                     */
+PIN  6   = A3      ; /* Z80 A3                     */	
+PIN  7   = A4      ; /* Z80 A4                     */
+PIN  8   = A5      ; /* Z80 A5                     */
+PIN  9   = A6      ; /* Z80 A6                     */
+PIN 11   = A7      ; /* Z80 A7                     */ 
+PIN 13   = !IORQ   ; /* Z80 /IORQ                  */
+PIN 19   = !RESET  ; /* Z80 /RESET                 */
+/***************** OUTPUT PINS *********************/
+PIN 12   = UNUSED  ; /* Unused pin                 */
+PIN 14   = PRESET  ; /* Reset active high          */
+PIN 15   = ROM_CS  ; /* /ROM CS signal             */ 
+PIN 16   = RAM_CS  ; /* /RAM CS signal             */ 
+PIN 17   = CH376   ; /* /CH376 CS signal           */ 
+PIN 18   = UNUSED2 ; /* Unused pin                 */
+
+/* Outputs are inverted in comparison to pin function! */
+RAM_CS = MREQ&((A15&!A14)#(!A15&A14)); 	/* RAM at 4000h */
+ROM_CS = MREQ&A15&A14;	            		/* ROM at C000h */
+CH376  = IORQ&!A7&A6&A5&A4&A3&A2&A1; 		/* Address 7Fh and 7Eh */
+PRESET = !RESET;
+UNUSED = 'b'0;								/* Unused pin permanently set to binary value 0 */
+UNUSED2 = 'b'0;
