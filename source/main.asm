@@ -169,7 +169,6 @@ CmdTable:
   BYTE $10 + $80                ; 100F (ROM B)
   BYTE $0F
 
-  ;include "gad-helper.asm"
 ;---------------------------------------------------------------------
 ;                       DOS commands
 ;---------------------------------------------------------------------
@@ -209,9 +208,6 @@ FLOAD:
   ld    (DosFlags), a           ; Clear all DOS flags
   call  ReadParamString
   jp    nz, ShowWhatErr
-
-  ;ld    de, FileName
-  ;call PrintString
 
   ; DE points to first character after ending quote
   call  GetNumberParam
@@ -268,34 +264,12 @@ REMOVE:
   ld    (FileName), a
   call  ReadParamString
   jp    nz, ShowWhatErr
-;   ld    de, ConfirmationMsg
-; ; Confirm erasing by pressing ENTER key
-;   call  PrintString
-; ; .wait_key:
-; ;   ld    a, (KBDBASEADDR + KEY_N)
-; ;   and   1
-; ;   jr    z, .end
-; ;   ld    a, (KBDBASEADDR + KEY_Y)
-; ;   and   1
-; ;   jr    nz, .wait_key
 
-;   call  ReadKey
-;   cp    'Y'
-;   jr    nz, .end
   call  GSE_REMOVE
-;.end:
   ret
-
-;ConfirmationMsg:
-;  db "ARE YOU SURE (Y/N)?", 0
 
 GAD:
   pop   af
-
-  ; call InitHelper
-  ; call usb__get_version
-  ; call ShowDbgByte
-  ; ret
 
 ; Reserve space at the end of RAM, but only first time!
   ld    hl, (RAMTOP)
