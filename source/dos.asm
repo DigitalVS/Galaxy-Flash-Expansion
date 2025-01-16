@@ -151,12 +151,6 @@ GSE_CD:
   jr    .do_error               ; Path too long
 .open:
   ld    hl, PathName
-
-  ; push de
-  ; ld de, hl
-  ; call  PrintString
-  ; pop de
-
   call  usb__open_path          ; Try to open directory
   ret   z                       ; If opened OK then done
   cp    CH376_ERR_MISS_FILE     ; Directory missing?
@@ -304,10 +298,6 @@ read_gtp_header:
   or    a
   sbc   hl, de                  ; HL = number of bytes to read
   ex    hl, de                  ; DE = number of bytes to read, HL = start address
-  ; ld bc, hl
-  ; call ShowDbgWord
-  ; ld bc, de
-  ; call ShowDbgWord
   xor   a                       ; Set Z flag for OK status
   ret
 .error:
@@ -493,7 +483,6 @@ calculate_crc:
   jr    nz, .loop
   ld    a, $FF
   sub   b
-  ;ShowByteInc
   ret
 
 ;--------------------------------------------------------------------
@@ -919,7 +908,6 @@ dos__getfiletype:
   inc   de                      ; Skip filetype in list
 .search:
   ld    a, (de)
-  ;ShowByteInc
   or    a                       ; End of filetypes list?
   jr    z, .unknown
   ld    c, 3                    ; Extension length

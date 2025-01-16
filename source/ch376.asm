@@ -330,7 +330,6 @@ usb__set_filename:
 .send_name:
   ld    a, (hl)
 ; Send char
-  ;ShowByteInc
   out   (CH376_DATA_PORT), a    ; Send filename char to CH376 (with ending zero)
   inc   hl                      ; Next char
   or    a
