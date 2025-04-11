@@ -24,29 +24,29 @@ VIDEORAM  = $2800 ; Start of video RAM, 512 bytes, 32x16 characters
 ;                          System Variables
 ;----------------------------------------------------------------------------
 ; Name          Location  Size(B) Init value          Description
-NUMERICVARS     = $2A00 ;  104 	  0 	     Numeric BASIC variables from A to Z, two bytes each
+NUMERICVARS     = $2A00 ;  104    0        Numeric BASIC variables from A to Z, two bytes each
 CURSORPOS       = $2A68 ;   2     $2800    Current cursor position in video RAM
 RAMTOP          = $2A6A ;   2     $3800 (for 4KB RAM) End of memory address
 SCREENSTART     = $2A6C ;   2     0        Start of video memory for scrolling.
-STRINGX         = $2A70 ;  16 	  0 	     BASIC X$ variable value
-STRINGY         = $2A80 ;  16     0 	     BASIC Y$ variable value
+STRINGX         = $2A70 ;  16 	  0        BASIC X$ variable value
+STRINGY         = $2A80 ;  16     0        BASIC Y$ variable value
 SHOWMEM         = $2A97 ;   2     0        Memory dump start address used by breakpoint command
 KBDDIFF         = $2AA5 ;   2     0        Keyboard differentiator (last two pressed keys)
 RNDSEED         = $2AA7 ;   3     0        RND seed
 ASMPASSNO       = $2AAA ;   1              Assembler pass number (1 or 2)
-ARITHMACC       = $2AAC ;  124*2  0 	     Arithmetics accumulators (IX), used for floating point calculations
+ARITHMACC       = $2AAC ;  124*2  0        Arithmetics accumulators (IX), used for floating point calculations
 TEXTHORPOS      = $2BA8 ;   1   $B or $C   Horizontal text position
 BASICLINK       = $2BA9 ;   3     $C9      Basic command link. Initial value is RET opcode. Should be changed to JP $xxxx or CALL $xxxx.
 VIDEOLINK       = $2BAC ;   3     $C9      Video link
-CLOCKSTATE      = $2BAF ; 	1 		0 		   If bit 7 is set, clock's working
+CLOCKSTATE      = $2BAF ;   1     0        If bit 7 is set, clock's working
 SCROLLCNT       = $2BB0 ;   1     0        Scroll counter
-SCROLLFLAG      = $2BB1 ;   1     0	       Scroll flag
+SCROLLFLAG      = $2BB1 ;   1     0        Scroll flag
 SHOWFOR         = $2BB2 ;   1              Number of rows to dump. Zero value means dumping until BRK key is pressed. Every row is 8 bytes wide.
 ASMOPTFLAG      = $2BB3 ;   1              Assembler OPT flag value
-REPEATKEY       = $2BB4 ;   1     0 	     REPT key register (last pressed key code)
+REPEATKEY       = $2BB4 ;   1     0        REPT key register (last pressed key code)
 PRINTERFLAG     = $2BB5 ;   1     0        Value is $FF if printing is turn on, $00 otherwise.
 INPUTBUFFER     = $2BB6 ;  125             Input buffer start address
-BASICSTART      = $2C36 ;   2 	  $2C3A    BASIC start address
+BASICSTART      = $2C36 ;   2     $2C3A    BASIC start address
 BASICEND        = $2C38 ;   2     $2C3A    BASIC end address
 
 ; Buffer and video RAM lengths
@@ -70,11 +70,11 @@ VRAMLEN         = NUMERICVARS - VIDEORAM
 SkipSpaces      = $0105 ; Skip space characters in string pointed by DE. Return: DE points to first non-space character, this character is in A.
 HexCharToBin    = $0165 ; Converts HEX character pointed by DE to numerical value. Result is in A, DE is incremented or unmodified on error. C flag is set on error.
 IntCharToBin    = $0172 ; Converts integer character pointed by DE to numerical value. Result is in A, DE is incremented or unmodified on error. C flag is set on error.
-BasicFreeMem    = $0183	; Returns free BASIC memory in bytes in HL.
+BasicFreeMem    = $0183 ; Returns free BASIC memory in bytes in HL.
 NewLine         = $02ED ; Prints a new line if the cursor is not in the upper left corner of the screen.
 CheckBrkDelKey  = $02FA ; Check BRK/DEL key. BRK stops processing whatever is working at the moment. DEL stops it temporarily.
 CheckBrkKey     = $02FF ; Check BRK key. BRK stops processing whatever is working at the moment.
-ShowSorryErr    = $0153 ; Shows "SORRY" message. For insuficient memory or other reasons.
+ShowSorryErr    = $0153 ; Shows "SORRY" message. For insufficient memory or other reasons.
 ShowHowErr      = $065A ; Shows 'HOW?' message. Syntax is correct but value is incorrect.
 ShowWhatErr     = $078F ; Shows 'WHAT?' message. For syntax error.
 CatchAllCmds    = $075B ; This function is called when BASIC does not recognize the command. Usually not called by user program but this address is on stack when other programs are subscribed to be called for command line input.
@@ -127,7 +127,7 @@ ReadHexByte     = $18EE ; Read HEX byte from input stream pointed by DE.
 ;-----------------------------------------------------------------------------
 ;                         Key Codes
 ;-----------------------------------------------------------------------------
-KBDBASEADDR = $2000 ; Mapped keyboard space is in range of $2000-$2037. Every byte coresponds to one key. Value is 1 if key is pressed and 0 otherwise.
+KBDBASEADDR = $2000 ; Mapped keyboard space is in range of $2000-$2037. Every byte corresponds to one key. Value is 1 if key is pressed and 0 otherwise.
 
 KEY_A = 1
 KEY_B = 2

@@ -2,7 +2,7 @@
 
 Galaxy Flash Expansion is a USB flash drive (thumb drive, memory stick) expansion board for retro computer [Galaksija](https://en.wikipedia.org/wiki/Galaksija_(computer)) (eng. Galaxy). It supports classical Galaksija computers where it is connected via expansion port, and new Galaksija 2024 with expansion board plugged to the CPU socket. Classical Galaksija expansion board features 32 kilobyte RAM expansion as well.
 
-This project contains all hardware description files and software files required for making such expansion boards. All contents is published in an open-source manner and you are free to make it on your own, but you can also order assembled and tested boards from the author himself by contacting him via email address provided for this GitHub account.
+This project contains all hardware description files and software files required for making such expansion boards. All contents is published in an open-source manner and you are free to make it on your own, or you can order assembled and tested boards from the author himself by contacting him via email address provided for this GitHub account.
 
 The source code is written in Z80 assembly language and is almost identical for both Galaksija versions, but hardware part is quite distinct and to differentiate these two versions, they are named differently:
 
@@ -11,7 +11,7 @@ The source code is written in Z80 assembly language and is almost identical for 
 
 > Approximate speed measurements show impressive speed results for such underpowered computer. With screen refresh disabled, data reading speed is roughly in the range of 80-100 kilobytes per second.
 
-Next image shows a (non root) directory contents example. Note that long file names are shortened to eight characters with `>1` at the end of the name. In case of multiple files with equal six characters at the beginning of the name, suffixes are also `>2`, `>3`, and so on. At the end of line is file size value in bytes. For files larger then 9999 bytes, size is displayed in kilobytes with latter `K` at the end, or even in megabytes with letter `M`. Directory listings with file(s) larger then one gigabyte are not supported.
+Next image shows a (non root) directory contents example. Note that long file names are shortened to eight characters with `>1` at the end of the name. In case of multiple files with equal six characters at the beginning of the name, suffixes are also `>2`, `>3`, and so on. At the end of line is file size value in bytes. For files larger then 9999 bytes, size is displayed in kilobytes with latter `K` at the end (eg. `123K`), or even in megabytes with letter `M`. Directory listings with file(s) larger then one gigabyte are not supported.
 
 ![Directory listing example.](/images/usb_flash_screen.png)
 
@@ -27,7 +27,7 @@ The rest of the functionality is different for Galaxy Space Expansion and Galaxy
 
 ### Galaxy Space Expansion
 
-Galaxy Space Expansion additionally contains one 32 kilobyte RAM chip and one EPROM chip. First chip is a RAM expansion chip which together with existing 6 kilobytes on the computer PCB makes one continuous 38 kilobyte memory space. Second chip contains software for communication with USB drive (and something more that will be presented later in the text). These two chips are visible to the CPU at following address ranges:
+Galaxy Space Expansion additionally contains one 32 kilobyte RAM chip and one EPROM chip. First chip is a RAM expansion chip which in conjunction with existing 6 kilobytes on the main computer PCB makes one continuous 38 kilobyte memory space. Second chip contains software for communication with USB drive (and something more that will be presented later in the text). These two chips are visible to the CPU at following address ranges:
 
 - RAM: &4000 - &BFFF
 - EPROM: &C000 - &FFFF
@@ -44,7 +44,7 @@ Galaxy Space Expansion board is supposed to be plugged in the Galaksija's 44-pin
 
 Bringing these three missing signals to expansion connector is not too hard and does not require any special skills or equipment. You'll need a peace of isolated wire (not too thin, nor too thick), soldering wire and a soldering iron.
 
-Edge card board from Galaksija Resources repository already has soldering pads labeled VCC, RD- and RESET-. These are the points where you'll solder one side of the wires. The other side of VCC wire is best to solder somewhere as close to power supply input socket as possible, to the point where VCC is available. RD signal is best to take directly from CPU pin number 21, from underneath of main PCB. The other side of RESET wire may be connected to CPU pin 26, or from somewhere closer to the edge connector. For example, the next picture shows edge card board with RESET signal taken from the nearby reset push button.
+Edge card board from Galaksija Resources repository already has soldering pads labeled VCC, RD- and RESET-. These are the points where you'll solder one side of the wires. The other side of VCC wire is best to solder somewhere as close to power supply input socket as possible, to one of the points where VCC is available. RD signal is best to take directly from CPU pin number 21, from underneath of main PCB. The other side of RESET wire may be connected to CPU pin 26, or to some of the reset points closer to the edge connector. For example, the next picture shows edge card board with RESET signal taken from the nearby reset push button.
 
 ![Expansion port example.](/images/port-example.png)
 
@@ -54,7 +54,7 @@ All of this may seam as too hard for someone unexperienced in soldering and elec
 
 ### Galaxy Flash Expansion
 
-New Galaksija 2024 has more RAM and ROM then old Galaksija, and it does not have any free space left in the memory map. Luckily, there is a lot of unused space in the built-in EPROM chip and all the software for this project has been put in there. Disadvantage is that existing EPROM chip must be reprogrammed or replaced, but, on the other side, software will be initialized automatically and no additional initialization steps are needed.
+New Galaksija 2024 has more RAM and ROM then old Galaksija, and it does not have any free space left in the memory map. Luckily, there is a lot of unused space in the built-in EPROM chip and all the software for this project has been put in there. Drawback is that existing EPROM chip must be reprogrammed or replaced, but, on the other side, software will be initialized automatically and no additional initialization steps are needed after every computer startup.
 
 #### Board Installation Instructions
 
@@ -66,7 +66,7 @@ Now you need to push GFE board into the CPU socket and to put CPU into CPU socke
 
 The size of the GFE board is so small that once it is installed it practically doesn't need to be removed ever again.
 
-Following image shows GFE board installed into the Galaksija's CPU slot. Two logical ICs are on the back side of the board, behind the CPU and are not visible on the picture.
+Following image shows GFE board installed into the Galaksija's CPU slot. Two logical ICs are on the back side of the board, underneath the CPU and are not visible on the picture.
 
 ![GFE board look.](/images/installed-gfe.png)
 

@@ -11,7 +11,7 @@ Izvorni kod je napisan u Z80 asemblerskom jeziku i skoro potpuno je identičan z
 
 > Približna ocena brzine pokazuje impresivne rezultate za računar sa tako skromnim procesorskim mogućnostima. Sa isključenim osvežavanjem ekrana, brzina čitanja podataka sa USB ključa je u opsegu od 80 do 100 kilobajta u sekundi.
 
-Sledeća slika pokazuje ispis sadržaja jednog direktorijuma. Dugačka imena fajlova su skraćena na osam znakova i završavaju se sa `>1`. U slučaju da je prvih šest znakova naziva istovetno za veći broj fajlova, oni će biti prikazani sa različitim završetkom: `>2`, `>3`, itd. Na kraju svake linije je oznaka `<DIR>` za direktorijume ili veličina fajla za fajlove. Veličina fajlova većih od 9999 bajtova je prikazana u kilobajtima sa slovom `K` na kraju, ili u megabajtima i tada se završava slovom `M`. Prikaz direktorijuma sa fajlovima većim od jednog gigabajta nije podržan.
+Sledeća slika pokazuje ispis sadržaja jednog direktorijuma. Dugačka imena fajlova su skraćena na osam znakova i završavaju se sa `>1`. U slučaju da je prvih šest znakova naziva istovetno za veći broj fajlova, oni će biti prikazani sa različitim završetkom: `>2`, `>3`, itd. Na kraju svake linije je oznaka `<DIR>` za direktorijume ili veličina fajla za fajlove. Veličina fajlova većih od 9999 bajtova je prikazana u kilobajtima sa slovom `K` na kraju (na primer, `123K`), ili u megabajtima i tada se završava slovom `M`. Prikaz direktorijuma sa fajlovima većim od jednog gigabajta nije podržan.
 
 ![Primer ispisa direktorijuma.](/images/usb_flash_screen.png)
 
@@ -55,7 +55,7 @@ Sve ovo može izgledati previše komplikovano za nekoga ko je neiskusan u lemlje
 
 ### Fleš proširenje za Galaksiju (GFE)
 
-Nova Galaksija iz 2024. godine ima više RAM i ROM memorije od stare Galaksije, tako da u memorijskoj mapi računara nije preostalo slobodnog mesta za eventualne dodatne memorijske čipove. Na sreću, dobar deo prostora u ugrađenom EPROM čipu se ne koristi i to je prostor u koji se upisuje softver za ovaj projekat. Mana je jedino što se taj EPROM čip mora ili reprogramirati ili zameniti novim, ali, po drugoj strani, prednost je da se softver zato inicializuje automatski i nije potrebno izrvšavati dodatne komande za njegovu inicijalizaciju.
+Nova Galaksija iz 2024. godine ima više RAM i ROM memorije od stare Galaksije, tako da u memorijskoj mapi računara nije preostalo slobodnog mesta za eventualne dodatne memorijske čipove. Na sreću, dobar deo prostora u ugrađenom EPROM čipu se ne koristi i to je prostor u koji se upisuje softver za ovaj projekat. Mana je jedino što se taj EPROM čip mora ili reprogramirati ili zameniti novim, ali, po drugoj strani, prednost je da se softver zato inicializuje automatski i nije potrebno izrvšavati dodatne komande za njegovu inicijalizaciju prilikom svakog startovanja računara.
 
 #### Uputstvo za povezivanje
 
@@ -67,7 +67,7 @@ Sada je potrebno utaknuti GFE pločicu u procesorsko podnožje, kao i procesor u
 
 Dimenzije GFE pločice su vrlo male, tako da kad se jednom instalira, praktično je više nije neophodno vaditi iz podnožja.
 
-Sledeća slika prikazuje GFE pločicu postavljenu u Galaksijin procesorski slot. Još dva logička kola se nalaze sa zadnje strane pločice, iza procesora, i nisu vidljiva na slici.
+Sledeća slika prikazuje GFE pločicu postavljenu u Galaksijin procesorski slot. Još dva logička kola se nalaze sa zadnje strane pločice, ispod procesora, i nisu vidljiva na slici.
 
 ![Izgled instalirane GFE pločice.](/images/installed-gfe.png)
 
