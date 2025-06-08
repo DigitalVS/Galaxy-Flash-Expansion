@@ -27,7 +27,7 @@ The rest of the functionality is different for Galaxy Space Expansion and Galaxy
 
 ### Galaxy Space Expansion
 
-Galaxy Space Expansion additionally contains one 32 kilobyte RAM chip and one EPROM chip. First chip is a RAM expansion chip which in conjunction with existing 6 kilobytes on the main computer PCB makes one continuous 38 kilobyte memory space. Second chip contains software for communication with USB drive (and something more that will be presented later in the text). These two chips are visible to the CPU at following address ranges:
+Galaxy Space Expansion additionally contains one 32 kilobyte RAM chip and one EPROM chip. Former chip is a RAM expansion chip which in conjunction with existing 6 kilobytes on the main computer PCB makes one continuous 38 kilobyte memory space. Latter chip contains software for communication with USB drive (and something more that will be presented later in the text). These two chips are visible to the CPU at following address ranges:
 
 - RAM: &4000 - &BFFF
 - EPROM: &C000 - &FFFF
@@ -54,7 +54,7 @@ All of this may seam as too hard for someone unexperienced in soldering and elec
 
 ### Galaxy Flash Expansion
 
-New Galaksija 2024 has more RAM and ROM then old Galaksija, and it does not have any free space left in the memory map. Luckily, there is a lot of unused space in the built-in EPROM chip and all the software for this project has been put in there. Drawback is that existing EPROM chip must be reprogrammed or replaced, but, on the other side, software will be initialized automatically and no additional initialization steps are needed after every computer startup.
+New Galaksija 2024 has more RAM and ROM then old Galaksija, and it does not have any free space left in the memory map. Luckily, there is a lot of unused space in the built-in EPROM chip and all the software for this project has been put in there. Drawback is that existing EPROM chip must be reprogrammed or replaced, but, on the other hand, software will be initialized automatically and no additional initialization steps are needed after every computer startup.
 
 #### Board Installation Instructions
 
@@ -80,15 +80,15 @@ Filenames follow the MS-DOS standard 8+3 name plus extension format (eg. "filena
 
 Extension `.BAS` is for BASIC programs, while `.GTP` extension is support for popular Galaksija file format for machine language programs or combination of BASIC and machine language programs. Extension `.BIN` is for raw binary files, `.TXT` is treated the same way as `.BIN` but was added so that user can easier distinguish data saved in the file.
 
-The path is limited to 36 characters, which is minimum of four directory levels. Files can only be accessed in the current directory (eg. "path/filename.txt" is not a valid filename). You can move between directory levels using `CD` command, which accepts an entire path (eg. "subdir1/subdir2/subdir3"). If the path starts with a `/` then it starts from the root, otherwise it is relative to the current directory. Command parameter ".." moves current directory one level up, `.` stands for the current directory.
+The path is limited to 36 characters, which is minimum of four directory levels. Files can only be accessed in the current directory (eg. "path/filename.txt" is not a valid filename). You can move between directory levels using `CD` command, which accepts an entire path (eg. "subdir1/subdir2/subdir3"). If the path starts with a `/` then it starts from the root, otherwise it is relative to the current directory. Command parameter `..` moves current directory one level up, `.` stands for the current directory.
 
-MS Windows uses the `~` (tilde) character to create the short versions of long filenames but it does not exist on Galaksija. Character `>` has been used instead.
+MS Windows uses the `~` (tilde) character to create the short versions of long filenames but that character does not exist on the Galaksija. Character `>` has been used instead.
 
 All low level USB subroutines are exposed with a jump table, so that other programs may use it to implement its own data reading and/or writing functionality.
 
 ### Commands
 
-There are a small set of commands implemented to handle all necessary communication with USB flash drives. These commands are:
+Small set of commands is implemented to handle all necessary communication with USB flash drives. These commands are:
 
 | Command | Description
 |------|---------------
@@ -109,7 +109,7 @@ Parameters in parentheses are optional parameters (though not always for all cas
 
 Display detailed current directory listing. Parameter "\<wildcard\>" is optional. Wildcard characters `?` and `*` are used to filter filenames, eg. `CAT "*.BAS"` shows only filenames with BAS extension.
 
->To be able to view long directory listings, __directory entries are printed on the screen only as long as ENTER key is held down__. This means that it is possible to list part of directory contents by holding the ENTER key pressed, then to release ENTER key and to  review displayed listing, then to continue listing  more directory entries by pressing ENTER key again or to stop listing process by pressing a BREAK key (BREAK key is usually labeled as ESC on newer Galksija keyboards).
+>To be able to view long directory listings, __directory entries are printed on the screen only as long as ENTER key is held down__. This means that it is possible to list part of directory contents by holding the ENTER key pressed, then to release ENTER key and to  review displayed listing, then to continue listing  more directory entries by pressing ENTER key again or to stop listing process by pressing a BREAK key (BREAK key is usually labeled as ESC on newer Galaksija keyboards).
 
 This command does not show hidden files and directories.
 
