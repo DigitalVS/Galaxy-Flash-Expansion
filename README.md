@@ -38,6 +38,8 @@ Next image shows two versions of the GSE PCBs. Main difference between them is t
 
 ![Two GSE version boards look.](/images/two-gse-versions.png)
 
+Minimal system requirements for GSE board are ROM A and ROM B with 6 kilobytes of RAM present. Without all 6 kilobytes of RAM additional RAM won't make continuous memory space and will not be usable in most cases.
+
 #### Board Installation Instructions
 
 Galaxy Space Expansion board is supposed to be plugged in the Galaksija's 44-pin edge card expansion slot. For those who don't have small edge card board with expansion slot already installed on the Galaksija's main PCB, production files are provided at [Galaksija Resources](https://github.com/DigitalVS/Galaksija-Resources) repository, or may be ordered together with GSE board. This small board is made to be backward compatible with original edge card PCBs designed for original Galaksija in year 1984, but features additional signals which are missing on the original board. For GSE board to function properly, three of these additional signals must be present on the expansion connector: power supply (VCC), read (RD) CPU signal and RESET CPU signal.
@@ -58,9 +60,9 @@ New Galaksija 2024 has more RAM and ROM then old Galaksija, and it does not have
 
 #### Board Installation Instructions
 
-Installation of the Galaxy Flash Expansion board is easier then installation of the Galaxy Space Expansion board. Here is assumed that everyone has a Z80 processor installed into a socket and not soldered directly to the PCB. If this is not so in your case, you'll have to first desolder the processor and solder the 40-pin socket in it's place.
+Installation of the Galaxy Flash Expansion board is easier then installation of the Galaxy Space Expansion board. Here is assumed that everyone has a Z80 processor installed into a socket and not soldered directly to the PCB. If this is not so in your case, you'll have to first desolder the processor and solder the 40-pin socket in its place.
 
-First, pull carefully Z80 CPU from the socket. If you do not have a special tool for this, you may use small flat screwdriver. Try to pull CPU upwards evenly to avoid bending pins on the chip. If some of the pins end up bended, it's not a big deal, carefully and without too much force, bring them back to their correct position. You may use needle nose pliers or flat screwdriver to accomplish this.
+First, pull carefully Z80 CPU from the socket. If you do not have a dedicated tool for this, you may use small flat screwdriver. Try to pull CPU upwards evenly on both sides by one or two millimeters at the time to avoid bending pins on the chip. If some of the pins end up bended, it's not a big deal, carefully and without too much force, bring them back to their correct position. You may use needle nose pliers or flat screwdriver to accomplish this.
 
 Now you need to push GFE board into the CPU socket and to put CPU into CPU socket of the GFE board. GFE board can be installed only in one position (there is no room to install it in inverse orientation), so it is not possible to install it in the wrong way, but for CPU take care that it is installed in correct orientation. It needs to be installed in the same orientation as it was installed previously when it was in the socket. The correct orientation is also labeled on the GFE board.
 
