@@ -38,7 +38,7 @@ Next image shows two versions of the GSE PCBs. Main difference between them is t
 
 ![Two GSE version boards look.](/images/two-gse-versions.png)
 
-Minimal system requirements for GSE board are ROM A and ROM B with 6 kilobytes of RAM present. Without all 6 kilobytes of RAM additional RAM won't make continuous memory space and will not be usable in most cases.
+Minimal system requirements for GSE board are ROM A and ROM B with 6 kilobytes of RAM present. Without all 6 kilobytes of base RAM, additional RAM won't make continuous memory space and will not be usable in most cases.
 
 #### Board Installation Instructions
 
