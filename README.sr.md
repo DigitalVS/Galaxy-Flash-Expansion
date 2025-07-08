@@ -38,6 +38,8 @@ Naredna slika prikazuje dve verzije GSE proširenja. Glavna razlika između njih
 
 ![Izgled dve različite GSE verzije.](/images/two-gse-versions.png)
 
+Minimalna konfiguracija za GSE uređaj je ROM A i ROM B sa 6 kilobajta osnovnog RAM-a. Bez svih 6 kilobajta osnovne RAM memorije, dodatna RAM memorija neće predstavljati kontinuirani memorijski prostor i zato neće biti korisna za većinu scenarija upotrebe.
+
 #### Uputstvo za povezivanje
 
 Štampana ploča prostornog proširenja za Galaksiju (GSE) na sebi ima 44-pinski  konektor koji se priključuje na ivični konektor na matičnoj ploči Galaksije. Svi koji na svojoj klasičnoj Galaksiji nemaju zalemljenu malu štampanu ploču na kojoj se nalazi ivični konektor, mogu je izraditi pomoću fajlova objavljenih na  [Galaksija Resources](https://github.com/DigitalVS/Galaksija-Resources) repozitorijumu, ili je naručiti zajedno sa GSE štampanom pločom. Ova verzija te male štampane ploče je unazad kompatibilna sa  štampanom pločom ivičnog konektora za originalni projekat Galaksije iz 1984. godine, ali omogućava i povezivanje dodatnih signala koji su nedostajali na originalnoj ploči, a od kojih su neki neophodni za pravilno funkcionisanje GSE proširenja. To su: napon napajanja (VCC), kao i RD i RESET signali Z80 procesora.
