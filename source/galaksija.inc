@@ -28,7 +28,7 @@ NUMERICVARS     = $2A00 ;  104    0        Numeric BASIC variables from A to Z, 
 CURSORPOS       = $2A68 ;   2     $2800    Current cursor position in video RAM
 RAMTOP          = $2A6A ;   2     $3800 (for 4KB RAM) End of memory address
 SCREENSTART     = $2A6C ;   2     0        Start of video memory for scrolling.
-STRINGX         = $2A70 ;  16 	  0        BASIC X$ variable value
+STRINGX         = $2A70 ;  16     0        BASIC X$ variable value
 STRINGY         = $2A80 ;  16     0        BASIC Y$ variable value
 SHOWMEM         = $2A97 ;   2     0        Memory dump start address used by breakpoint command
 KBDDIFF         = $2AA5 ;   2     0        Keyboard differentiator (last two pressed keys)
@@ -79,6 +79,7 @@ ShowHowErr      = $065A ; Shows 'HOW?' message. Syntax is correct but value is i
 ShowWhatErr     = $078F ; Shows 'WHAT?' message. For syntax error.
 CatchAllCmds    = $075B ; This function is called when BASIC does not recognize the command. Usually not called by user program but this address is on stack when other programs are subscribed to be called for command line input.
 GetCmdLine      = $07BB ; Gets command line with '>' at the beginning. Inputs string into input buffer with CR at the end. DE = address of the last string character + 1.
+PrintHLAsASCII  = $08F3 ; Print HL value as ASCII characters
 PrintString     = $0937 ; Prints string pointed by DE to screen at current cursor position. Destroyed registers are A, B, F. String must ends with $00 or $0D (CR).
 PrintChar       = $09B5 ; Prints character in A to screen at current cursor position in CURSORPOS. Character is considered special ASCII character (eg. FF) if C flag is set.
 ClearLine       = $0A34 ; Clear line on the screen from position pointed by HL to the end of the line. Destroys A and F registers.
@@ -127,7 +128,7 @@ ReadHexByte     = $18EE ; Read HEX byte from input stream pointed by DE.
 ;-----------------------------------------------------------------------------
 ;                         Key Codes
 ;-----------------------------------------------------------------------------
-KBDBASEADDR = $2000 ; Mapped keyboard space is in range of $2000-$2037. Every byte corresponds to one key. Value is 1 if key is pressed and 0 otherwise.
+KBDBASEADDR = $2000 ; Mapped keyboard space is in range of $2000-$2037. Every byte corresponds to one key. Value is 0 if key is pressed and 1 otherwise.
 
 KEY_A = 1
 KEY_B = 2

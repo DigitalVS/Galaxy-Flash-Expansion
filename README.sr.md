@@ -1,6 +1,6 @@
 # Fleš proširenje za Galaksiju
 
-Fleš proširenje za Galaksiju je dodatak za retro računar [Galaksija](https://en.wikipedia.org/wiki/Galaksija_(computer)) koji omogućava upotrebu USB fleš ključa (fleš drajva) kao jedince spoljne memorije. Proširenje postoji u verziji za klasičnu Galaksiju, kod koje se priključuje na port za proširenje, i noviju verziju Galaksije iz 2024. godine, gde se priključuje u procesorsko podnožje. Proširenje za klasičnu Galaksiju sadrži i dodatnu RAM memoriju od 32 kilobajta.
+Fleš proširenje za Galaksiju je dodatak za retro računar [Galaksija](https://en.wikipedia.org/wiki/Galaksija_(computer)) koji omogućava upotrebu USB fleš ključa (fleš drajva) kao jedinice spoljne memorije. Proširenje postoji u verziji za klasičnu Galaksiju, kod koje se priključuje na port za proširenje, i noviju verziju Galaksije iz 2024. godine, gde se priključuje u procesorsko podnožje. Proširenje za klasičnu Galaksiju sadrži i dodatnu RAM memoriju od 32 kilobajta.
 
 Ovaj repozitorijum sadrži sve hardverske i softverske fajlove neophodne za izradu ovakvog proširenja. Sav sadržaj je objavljen kao _open-source_ i svako je slobodan da ga sam napravi, ali ovo proširenje je moguće naručiti i kao već sastavljen i testiran dodatak, putem elektronske pošte preko adrese autora koja je povezana sa ovim Github nalogom (eventualni kasniji načini naručivanja će biti objavljeni ovde kad budu dostupni).
 
