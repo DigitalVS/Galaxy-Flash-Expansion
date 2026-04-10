@@ -11,7 +11,7 @@ The source code is written in Z80 assembly language and is almost identical for 
 
 > Approximate speed measurements show impressive speed results for such underpowered computer. With screen refresh disabled, data reading speed is roughly in the range of 80-100 kilobytes per second.
 
-Next image shows a (non root) directory contents example. Note that long file names are shortened to eight characters with `>1` at the end of the name. In case of multiple files with equal six characters at the beginning of the name, suffixes are also `>2`, `>3`, and so on. At the end of line is file size value in bytes. For files larger then 9999 bytes, size is displayed in kilobytes with latter `K` at the end (eg. `123K`), or even in megabytes with letter `M`. Directory listings with file(s) larger then one gigabyte are not supported.
+Next image shows a (non root) directory contents example. Note that long file names are shortened to eight characters with `>1` at the end of the name. In case of multiple files with equal six characters at the beginning of the name, suffixes are also `>2`, `>3`, and so on. At the end of line is file size value in bytes. For files larger than 9999 bytes, size is displayed in kilobytes with latter `K` at the end (eg. `123K`), or even in megabytes with letter `M`. Directory listings with file(s) larger than one gigabyte are not supported.
 
 ![Directory listing example.](/images/usb_flash_screen.png)
 
@@ -56,11 +56,11 @@ All of this may seam as too hard for someone unexperienced in soldering and elec
 
 ### Galaxy Flash Expansion
 
-New Galaksija 2024 has more RAM and ROM then old Galaksija, and it does not have any free space left in the memory map. Luckily, there is a lot of unused space in the built-in EPROM chip and all the software for this project has been put in there. Drawback is that existing EPROM chip must be either reprogrammed or replaced, but, on the other hand, software will be initialized automatically and no additional initialization steps are needed after every computer startup.
+New Galaksija 2024 has more RAM and ROM than old Galaksija, and it does not have any free space left in the memory map. Luckily, there is a lot of unused space in the built-in EPROM chip and all the software for this project has been put in there. Drawback is that existing EPROM chip must be either reprogrammed or replaced, but, on the other hand, software will be initialized automatically and no additional initialization steps are needed after every computer startup.
 
 #### Board Installation Instructions
 
-Installation of the Galaxy Flash Expansion board is easier then installation of the Galaxy Space Expansion board. Here is assumed that everyone has a Z80 processor installed into a socket and not soldered directly to the PCB. If this is not so in your case, you'll have to first desolder the processor and solder the 40-pin socket in its place.
+Installation of the Galaxy Flash Expansion board is easier than installation of the Galaxy Space Expansion board. Here is assumed that everyone has a Z80 processor installed into a socket and not soldered directly to the PCB. If this is not so in your case, you'll have to first desolder the processor and solder the 40-pin socket in its place.
 
 First, pull carefully Z80 CPU from the socket. If you do not have a dedicated tool for this, you may use small flat screwdriver. Try to pull CPU upwards evenly on both sides by one or two millimeters at the time to avoid bending pins on the chip. If some of the pins end up bended, it's not a big deal, carefully and without too much force, bring them back to their correct position. You may use needle nose pliers or flat screwdriver to accomplish this.
 
