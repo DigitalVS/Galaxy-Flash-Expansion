@@ -74,6 +74,12 @@ Following image shows GFE board installed into the Galaksija's CPU slot. Two log
 
 > Don't forget to also replace or reprogram BASIC EPROM chip on the left side of the motherboard (labeled as U3) because GFE won't work otherwise.
 
+### With Sound Generator on the Same Board
+
+There is a GFE version with sound generator on the same PCB, named G2024 Companion and it is published on the [other repository](https://github.com/DigitalVS/G2024-Companion---Two-in-One-Expansion). Its look is shown on the next picture. For more information please visit the previous link.
+
+<img src="./images/G2024_Companion.jpg" width="380" alt="G2024 Companion">
+
 ## Software Features
 
 Only USB flash drives with FAT file system are supported. Operation is similar to MS-DOS, with a few differences.
