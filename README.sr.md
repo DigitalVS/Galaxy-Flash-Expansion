@@ -75,6 +75,12 @@ Sledeća slika prikazuje GFE pločicu postavljenu u Galaksijin procesorski slot.
 
 > Ne zaboravite da takođe zamenite ili reprogramirate Bejzik EPROM čip, koji je na levoj strani štampane ploče (oznaka U3), jer GFE neće raditi bez novog softvera.
 
+### Zajedno sa generatorom zvuka
+
+Postoji takođe verzija GFE zajedno sa generatorom zvuka na jednoj štampanoj ploči, pod nazivom G2024 Companion i njen izgled je prikazan na sledećoj slici. Više informacija o ovoj verziji je objavljeno na [drugom repozitorijumu](https://github.com/DigitalVS/Galaksija-Resources/blob/main/README.md#G2024-Companion---Two-in-One-Expansion).
+
+<img src="./images/G2024_Companion.jpg" width="380" alt="G2024 Companion">
+
 ## Softverske mogućnosti
 
 Podržani su samo USB fleš ključevi sa FAT fajl sistemom. Pristup fajl sistemu je sličan kao kod MS-DOS-a, ali ima i nekoliko razlika.

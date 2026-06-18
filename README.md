@@ -76,7 +76,7 @@ Following image shows GFE board installed into the Galaksija's CPU slot. Two log
 
 ### With Sound Generator on the Same Board
 
-There is a GFE version with sound generator on the same PCB, named G2024 Companion and it is published on the [other repository](https://github.com/DigitalVS/G2024-Companion---Two-in-One-Expansion). Its look is shown on the next picture. For more information please visit the previous link.
+There is a GFE version with sound generator on the same PCB, named G2024 Companion and it is published on the [other repository](https://github.com/DigitalVS/Galaksija-Resources/blob/main/README.md#G2024-Companion---Two-in-One-Expansion). Its look is shown on the next picture. For more information please visit the previous link.
 
 <img src="./images/G2024_Companion.jpg" width="380" alt="G2024 Companion">
 
